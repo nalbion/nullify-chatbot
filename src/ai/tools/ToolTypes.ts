@@ -1,4 +1,4 @@
-import { Git } from '../../git/Git';
+import { Git } from '../../services/git/Git';
 import { type Tool } from './Tool';
 import { ToolDefinition } from './ToolDefinition';
 

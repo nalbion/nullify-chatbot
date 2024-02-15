@@ -42,7 +42,7 @@ export class AI {
         const result = await ToolManager.executeTool(toolCall.function.name, context, toolCall.function.arguments);
         console.info('tool result:', result);
         if (result) {
-          return await this.sendChatCompletionRequest(result, context);
+          return await this.sendChatCompletionRequest(result, context, tools);
         }
       }
     }

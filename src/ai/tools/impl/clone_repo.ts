@@ -11,7 +11,8 @@ export const TOOL_CLONE_REPO = 'clone_repo';
 const clone_repo = async (context: ToolContext, repoUrl: string, localPath: string) => {
   try {
     const fullPath = await context.git.clone(repoUrl, localPath);
-    return `The repository ${repoUrl} was cloned to ${fullPath}`;
+    const project = localPath.split('/').pop();
+    return `The repository ${repoUrl} has been cloned locally as project "${project}". It can now be scanned for vulnerabilities`;
   } catch (err) {
     return `Error cloning repository from ${repoUrl} to ${localPath}: ${(err as Error).message}`;
   }
